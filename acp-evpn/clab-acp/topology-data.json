@@ -1,0 +1,348 @@
+{
+  "name": "acp",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "__lab-name",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-2dc1cf85d670",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true,
+        "ipam": {
+          "provider": "containerlab"
+        }
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGuC1z3Oj4N64cSZusIYbYGUIKSoXvaZzFacelnsJbfa"],
+  "nodes": {
+    "internet": {
+      "index": "0",
+      "shortname": "internet",
+      "longname": "acp-internet",
+      "fqdn": "internet.acp.io",
+      "group": "",
+      "labdir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/internet",
+      "kind": "linux",
+      "image": "frr-nft:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc1cf85d670",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/internet",
+        "clab-node-longname": "acp-internet",
+        "clab-node-name": "internet",
+        "clab-node-type": "",
+        "clab-owner": "ilja",
+        "clab-topo-file": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/topology.clab.yaml",
+        "containerlab": "acp",
+        "graph-level": "1"
+      },
+      "port-bindings": [
+      ]
+    },
+    "k3s": {
+      "index": "1",
+      "shortname": "k3s",
+      "longname": "acp-k3s",
+      "fqdn": "k3s.acp.io",
+      "group": "",
+      "labdir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/k3s",
+      "kind": "linux",
+      "image": "frr-nft:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc1cf85d670",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/k3s",
+        "clab-node-longname": "acp-k3s",
+        "clab-node-name": "k3s",
+        "clab-node-type": "",
+        "clab-owner": "ilja",
+        "clab-topo-file": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/topology.clab.yaml",
+        "containerlab": "acp",
+        "graph-level": "3"
+      },
+      "port-bindings": [
+      ]
+    },
+    "leaf": {
+      "index": "2",
+      "shortname": "leaf",
+      "longname": "acp-leaf",
+      "fqdn": "leaf.acp.io",
+      "group": "",
+      "labdir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/leaf",
+      "kind": "linux",
+      "image": "frr-nft:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc1cf85d670",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/leaf",
+        "clab-node-longname": "acp-leaf",
+        "clab-node-name": "leaf",
+        "clab-node-type": "",
+        "clab-owner": "ilja",
+        "clab-topo-file": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/topology.clab.yaml",
+        "containerlab": "acp",
+        "graph-level": "2"
+      },
+      "port-bindings": [
+      ]
+    },
+    "mgmtserver": {
+      "index": "3",
+      "shortname": "mgmtserver",
+      "longname": "acp-mgmtserver",
+      "fqdn": "mgmtserver.acp.io",
+      "group": "",
+      "labdir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/mgmtserver",
+      "kind": "linux",
+      "image": "frr-nft:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc1cf85d670",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/mgmtserver",
+        "clab-node-longname": "acp-mgmtserver",
+        "clab-node-name": "mgmtserver",
+        "clab-node-type": "",
+        "clab-owner": "ilja",
+        "clab-topo-file": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/topology.clab.yaml",
+        "containerlab": "acp",
+        "graph-level": "1"
+      },
+      "port-bindings": [
+      ]
+    },
+    "mgmtspine": {
+      "index": "4",
+      "shortname": "mgmtspine",
+      "longname": "acp-mgmtspine",
+      "fqdn": "mgmtspine.acp.io",
+      "group": "",
+      "labdir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/mgmtspine",
+      "kind": "linux",
+      "image": "frr-nft:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc1cf85d670",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/mgmtspine",
+        "clab-node-longname": "acp-mgmtspine",
+        "clab-node-name": "mgmtspine",
+        "clab-node-type": "",
+        "clab-owner": "ilja",
+        "clab-topo-file": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/topology.clab.yaml",
+        "containerlab": "acp",
+        "graph-level": "1"
+      },
+      "port-bindings": [
+      ]
+    },
+    "shoot-firewall": {
+      "index": "5",
+      "shortname": "shoot-firewall",
+      "longname": "acp-shoot-firewall",
+      "fqdn": "shoot-firewall.acp.io",
+      "group": "",
+      "labdir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/shoot-firewall",
+      "kind": "linux",
+      "image": "frr-nft:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc1cf85d670",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/shoot-firewall",
+        "clab-node-longname": "acp-shoot-firewall",
+        "clab-node-name": "shoot-firewall",
+        "clab-node-type": "",
+        "clab-owner": "ilja",
+        "clab-topo-file": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/topology.clab.yaml",
+        "containerlab": "acp",
+        "graph-icon": "host",
+        "graph-level": "3"
+      },
+      "port-bindings": [
+      ]
+    },
+    "shoot-worker": {
+      "index": "6",
+      "shortname": "shoot-worker",
+      "longname": "acp-shoot-worker",
+      "fqdn": "shoot-worker.acp.io",
+      "group": "",
+      "labdir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/shoot-worker",
+      "kind": "linux",
+      "image": "frr-nft:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc1cf85d670",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/clab-acp/shoot-worker",
+        "clab-node-longname": "acp-shoot-worker",
+        "clab-node-name": "shoot-worker",
+        "clab-node-type": "",
+        "clab-owner": "ilja",
+        "clab-topo-file": "/home/ilja/git/github.com/iljarotar/clab-experiments/acp-evpn/topology.clab.yaml",
+        "containerlab": "acp",
+        "graph-icon": "host",
+        "graph-level": "3"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "k3s",
+          "interface": "eth0",
+          "mac": "aa:c1:ab:7d:09:0a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "leaf",
+          "interface": "Ethernet0",
+          "mac": "aa:c1:ab:51:d7:74",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "shoot-firewall",
+          "interface": "eth0",
+          "mac": "aa:c1:ab:1b:5d:da",
+          "peer": "z"
+        },
+        "z": {
+          "node": "leaf",
+          "interface": "Ethernet1",
+          "mac": "aa:c1:ab:fe:8f:38",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "shoot-worker",
+          "interface": "eth0",
+          "mac": "aa:c1:ab:39:11:04",
+          "peer": "z"
+        },
+        "z": {
+          "node": "leaf",
+          "interface": "Ethernet2",
+          "mac": "aa:c1:ab:52:85:37",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "leaf",
+          "interface": "Ethernet46",
+          "mac": "aa:c1:ab:f6:b0:3b",
+          "peer": "z"
+        },
+        "z": {
+          "node": "mgmtspine",
+          "interface": "Ethernet0",
+          "mac": "aa:c1:ab:7a:9e:e9",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "mgmtspine",
+          "interface": "Ethernet1",
+          "mac": "aa:c1:ab:cf:c9:79",
+          "peer": "z"
+        },
+        "z": {
+          "node": "mgmtserver",
+          "interface": "eth0",
+          "mac": "aa:c1:ab:3d:71:26",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "mgmtserver",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:cd:02:9f",
+          "peer": "z"
+        },
+        "z": {
+          "node": "internet",
+          "interface": "eth0",
+          "mac": "aa:c1:ab:76:e8:09",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

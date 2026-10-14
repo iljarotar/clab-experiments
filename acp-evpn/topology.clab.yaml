@@ -1,0 +1,56 @@
+name: acp
+prefix: __lab-name
+
+topology:
+  defaults:
+    kind: linux
+  kinds:
+    linux:
+      kind: linux
+      image: frr-nft:latest
+      network-mode: none
+      binds:
+        - files/__clabNodeName__-frr.conf:/etc/frr/frr.conf:ro
+        - files/daemons:/etc/frr/daemons:ro
+        - files/__clabNodeName__.sh:/root/interfaces.sh
+      exec:
+        - bash /root/interfaces.sh
+
+  nodes:
+    k3s:
+      labels:
+        graph-level: 3
+
+    shoot-worker:
+      labels:
+        graph-level: 3
+        graph-icon: host
+
+    shoot-firewall:
+      labels:
+        graph-level: 3
+        graph-icon: host
+
+    leaf:
+      labels:
+        graph-level: 2
+
+    mgmtspine:
+      labels:
+        graph-level: 1
+      
+    mgmtserver:
+      labels:
+        graph-level: 1
+
+    internet:
+      labels:
+        graph-level: 1
+
+  links:
+    - endpoints: ["k3s:eth0", "leaf:Ethernet0"]
+    - endpoints: ["shoot-firewall:eth0", "leaf:Ethernet1"]
+    - endpoints: ["shoot-worker:eth0", "leaf:Ethernet2"]
+    - endpoints: ["leaf:Ethernet46", "mgmtspine:Ethernet0"]
+    - endpoints: ["mgmtspine:Ethernet1", "mgmtserver:eth0"]
+    - endpoints: ["mgmtserver:eth1", "internet:eth0"]
