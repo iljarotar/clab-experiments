@@ -25,7 +25,7 @@ ip l set vrf300 up
 
 ip l add link bridge name vlan3000 type vlan id 3000
 ip l set vlan3000 master vrf300
-ip a add 10.100.255.2/32 dev vlan3000
+ip a add 10.100.255.3/32 dev vlan3000
 ip l set vlan3000 up
 
 ip l add vtep-3000 type vxlan id 3000 dstport 4789 local 10.100.254.1
