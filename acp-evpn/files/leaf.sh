@@ -41,7 +41,6 @@ ip l set vrf104030 up
 
 ip l add link bridge nach vlan4030 type vlan 4030
 ip l set vlan4030 master vrf104030
-ip a add 100.2.1.2/32 dev vlan4030
 ip l set vlan4030 up
 
 ip l add vtep-104030 type vxlan id 104030 dstport 4789 local 10.100.100.2
